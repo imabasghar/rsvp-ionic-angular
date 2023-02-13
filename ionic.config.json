@@ -1,0 +1,7 @@
+{
+  "name": "volleyball-rsvp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
