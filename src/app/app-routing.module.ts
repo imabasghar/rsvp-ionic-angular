@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'event-detail',
+    loadChildren: () => import('./event-detail/event-detail.module').then(m => m.EventDetailPageModule)
   }
 ];
 @NgModule({
