@@ -1,0 +1,30 @@
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-and-name {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.is-joined {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  ion-icon {
+    font-size: 20px;
+  }
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
