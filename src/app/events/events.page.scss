@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+.icon-and-title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 6px;
+}
+
 .is-going {
   display: flex;
   flex-direction: column;

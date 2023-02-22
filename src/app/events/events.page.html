@@ -18,7 +18,10 @@
         <ion-card [routerLink]="['/event-detail', event.id]">
           <ion-card-header>
             <ion-card-title class="card-title">
-              <span>{{ event.title }}</span>
+              <span class="icon-and-title">
+                <ion-icon name="calendar"></ion-icon>
+                {{ event.title }}
+              </span>
               <span class="is-going" *ngIf="event.isGoing">
                 <ion-icon name="checkmark-circle-outline" color="success" ></ion-icon>
                 Going
