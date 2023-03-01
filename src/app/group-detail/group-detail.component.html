@@ -16,8 +16,36 @@
   <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
       <ion-toolbar>
+        <ion-button slot="icon-only" (click)="modalCtrl.dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
         <ion-title size="large">{{ group.name }}</ion-title>
       </ion-toolbar>
     </ion-header>
+    <ion-list>
+      <ion-item class="ion-text-wrap">
+        <ion-label class="ion-text-wrap"><div [innerHTML]="group.description"></div></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ group.memberCount }} Members</ion-label>
+      </ion-item>
+    </ion-list>
+    <ng-container *ngIf="group.recentEvent">
+      <ion-toolbar class="ion-margin-top">
+        <ion-title>Recent Event</ion-title>
+      </ion-toolbar>
+      <app-event-card [event]="group.recentEvent"></app-event-card>
+    </ng-container>
   </ion-content>
+  <ion-footer>
+    <ion-toolbar color="light">
+      <ion-buttons slot="end">
+        <ion-button color="success" fill="solid"  *ngIf="!group.isJoined">Request to join</ion-button>
+        <ion-button color="warning" fill="outline" *ngIf="group.isJoined">Leave Group</ion-button>
+      </ion-buttons>
+      <ion-title color="success" *ngIf="group.isJoined">
+        Joined
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
 </ng-container>

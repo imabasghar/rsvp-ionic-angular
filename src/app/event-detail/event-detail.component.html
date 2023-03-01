@@ -15,6 +15,9 @@
   <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
       <ion-toolbar>
+        <ion-button slot="icon-only" (click)="modalCtrl.dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
         <ion-title size="large">{{ event.title }}</ion-title>
       </ion-toolbar>
     </ion-header>
