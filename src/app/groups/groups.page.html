@@ -29,7 +29,7 @@
 </ion-content>
 
 <ng-template #card let-group="group">
-  <ion-card>
+  <ion-card (click)="openGroupDetailModal(group.id)">
     <ion-card-header>
       <ion-card-title class="card-title">
         <span class="icon-and-name">

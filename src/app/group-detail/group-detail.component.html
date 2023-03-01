@@ -1,0 +1,23 @@
+<ng-container *ngIf="group$ | async as group">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button slot="icon-only" (click)="modalCtrl.dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <!-- <ion-back-button></ion-back-button> -->
+      </ion-buttons>
+      <ion-title>
+        {{ group.name }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">{{ group.name }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-content>
+</ng-container>

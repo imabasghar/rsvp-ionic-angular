@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { applySpec, groupBy, partition, pipe, prop, propEq } from 'ramda';
+import { ModalController } from '@ionic/angular';
 import { map, Observable } from 'rxjs';
 import { IGroup } from '../interfaces/group';
 import { GroupsService } from './groups.service';
+import { GroupDetailComponent } from '../group-detail/group-detail.component';
+
 @Component({
   selector: 'app-groups',
   templateUrl: './groups.page.html',
@@ -11,7 +14,7 @@ import { GroupsService } from './groups.service';
 export class GroupsPage implements OnInit {
   groups$!: Observable<{ mine: IGroup[]; others: IGroup[]; }>;
 
-  constructor(private groupsService: GroupsService) { }
+  constructor(private groupsService: GroupsService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.groups$ = this.groupsService.getGroups()
@@ -26,6 +29,17 @@ export class GroupsPage implements OnInit {
           )
         )
       )
+  }
+
+  async openGroupDetailModal(id: number) {
+    const modal = await this.modalCtrl.create({
+      component: GroupDetailComponent,
+      componentProps: {
+        id,
+      }
+    });
+
+    modal.present();
   }
 
 }
