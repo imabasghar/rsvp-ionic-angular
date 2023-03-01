@@ -2,11 +2,10 @@
   <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button icon-only [routerLink]="['/tabs']">
+        <ion-button slot="icon-only" (click)="modalCtrl.dismiss()">
           <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
       </ion-buttons>
-      <!-- <ion-icon name="arrow-back" slot="start"></ion-icon> -->
       <ion-title>
         {{ event.title }}
       </ion-title>
@@ -37,7 +36,7 @@
     </ion-list>
   </ion-content>
   <ion-footer>
-    <ion-toolbar>
+    <ion-toolbar color="light">
       <ion-buttons slot="end">
         <ion-button color="success" fill="solid"  *ngIf="!event.isGoing">Attend</ion-button>
         <ion-button color="warning" fill="outline" *ngIf="event.isGoing">Edit RSVP</ion-button>
