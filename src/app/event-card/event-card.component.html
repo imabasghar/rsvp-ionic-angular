@@ -1,0 +1,25 @@
+<ion-card (click)="openEventDetail(event.id)">
+  <ion-card-header>
+    <ion-card-title class="card-title">
+      <span class="icon-and-title">
+        <ion-icon name="calendar"></ion-icon>
+        {{ event.title }}
+      </span>
+      <span class="is-going" *ngIf="event.isGoing">
+        <ion-icon name="checkmark-circle-outline" color="success" ></ion-icon>
+        Going
+      </span>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="start-time">
+      {{ event.startTime | date: 'EEEE, MMMM d, y, h:mm a ' }}
+    </div>
+    <div class="location">
+      {{ event.location }}
+    </div>
+    <div class="going-count">
+      {{ event.goingCount }} going
+    </div>
+  </ion-card-content>
+</ion-card>
